@@ -11,6 +11,7 @@
 		AF976E4C2A96026F00E03590 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E4B2A96026F00E03590 /* ContentView.swift */; };
 		AF976E4E2A96027000E03590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF976E4D2A96027000E03590 /* Assets.xcassets */; };
 		AF976E512A96027000E03590 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF976E502A96027000E03590 /* Preview Assets.xcassets */; };
+		AF976E592A96087400E03590 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E582A96087400E03590 /* TitleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AF976E4B2A96026F00E03590 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF976E4D2A96027000E03590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF976E502A96027000E03590 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF976E582A96087400E03590 /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AF976E492A96026F00E03590 /* ChatAppSwiftUIApp.swift */,
 				AF976E4B2A96026F00E03590 /* ContentView.swift */,
+				AF976E572A96085F00E03590 /* Components */,
 				AF976E4D2A96027000E03590 /* Assets.xcassets */,
 				AF976E4F2A96027000E03590 /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				AF976E502A96027000E03590 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF976E572A96085F00E03590 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AF976E582A96087400E03590 /* TitleRow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				AF976E4C2A96026F00E03590 /* ContentView.swift in Sources */,
 				AF976E4A2A96026F00E03590 /* ChatAppSwiftUIApp.swift in Sources */,
+				AF976E592A96087400E03590 /* TitleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
