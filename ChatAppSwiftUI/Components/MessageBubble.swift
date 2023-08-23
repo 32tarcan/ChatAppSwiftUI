@@ -17,7 +17,7 @@ struct MessageBubble: View {
                 Text(message.text)
                     .padding()
                     .background(message.received ?
-                                Color.gray : Color(hex: "FFE5B4"))
+                                Color(hex: "F5F5F5") : Color(hex: "FFD8C4"))
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: message.received ? .leading : .trailing)
@@ -27,7 +27,7 @@ struct MessageBubble: View {
             if showTime {
                 Text("\(message.timestamp.formatted(.dateTime.hour().minute()))")
                     .font(.caption2)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color(hex: "F5F5F5"))
                     .padding(message.received ? .leading : .trailing, 25)
             }
         }
