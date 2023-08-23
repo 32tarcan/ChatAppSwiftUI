@@ -16,6 +16,7 @@
 		AF976E5E2A960C9500E03590 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E5D2A960C9500E03590 /* Message.swift */; };
 		AF976E612A960CFC00E03590 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E602A960CFC00E03590 /* MessageBubble.swift */; };
 		AF976E632A96115600E03590 /* Extension+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E622A96115600E03590 /* Extension+CornerRadius.swift */; };
+		AF976E652A96136800E03590 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E642A96136800E03590 /* MessageField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AF976E5D2A960C9500E03590 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		AF976E602A960CFC00E03590 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		AF976E622A96115600E03590 /* Extension+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CornerRadius.swift"; sourceTree = "<group>"; };
+		AF976E642A96136800E03590 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				AF976E582A96087400E03590 /* TitleRow.swift */,
 				AF976E602A960CFC00E03590 /* MessageBubble.swift */,
+				AF976E642A96136800E03590 /* MessageField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				AF976E4A2A96026F00E03590 /* ChatAppSwiftUIApp.swift in Sources */,
 				AF976E5E2A960C9500E03590 /* Message.swift in Sources */,
 				AF976E592A96087400E03590 /* TitleRow.swift in Sources */,
+				AF976E652A96136800E03590 /* MessageField.swift in Sources */,
 				AF976E5B2A960B8400E03590 /* Extension+Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
