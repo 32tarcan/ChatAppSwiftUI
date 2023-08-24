@@ -32,7 +32,7 @@ struct ContentView: View {
         
             
             HStack {
-                TextField("Mesajınızı yazın...", text: $newMessage)
+                TextField("Enter your message here", text: $newMessage)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button {
