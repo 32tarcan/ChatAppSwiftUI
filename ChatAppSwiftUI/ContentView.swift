@@ -7,32 +7,92 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
-    var messageArray = ["Hello you", "How are you doing?", "I've been building SwiftUI applications from scratch and it's so mych fun!"]
+    @StateObject private var chatModel = ChatModel()
+    @State private var newMessage = ""
     
     var body: some View {
+        
         VStack {
-            VStack {
-               TitleRow()
-                
-                ScrollView {
-                    ForEach(messageArray, id: \.self) { text in
-                        MessageBubble(message: Message(id: "12345", text: text, received: true, timestamp: Date()))
-                    }
-                }
-                .padding(.top, 10)
-                .background(.white)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
-            }
-            .background(Color(hex: "FFE5B4"))
             
-            MessageField()
+            TitleRow()
+                .background(Color(hex: "FFE5B4"))
+            
+            ScrollView {
+                ForEach(chatModel.messages) { message in
+                    MessageView(content: message.content, isUser: message.isUser)
+                }
+                
+            }
+            
+            .padding(.top, 20)
+            .background(.white)
+            .cornerRadius(30, corners: [.topLeft, .topRight])
+        
+            
+            HStack {
+                TextField("Mesajınızı yazın...", text: $newMessage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button {
+                    chatModel.addMessage(newMessage)
+                    newMessage = ""
+                    
+                        
+                        
+                } label: {
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color(hex: "FFD8C4"))
+                        .cornerRadius(50)
+                }
+                
+                
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 10)
+            .background(Color(hex: "F5F5F5"))
+            .cornerRadius(50)
+            .padding()
         }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
+    }
+}
+
+
+
+struct MessageView: View {
+    let content: String
+    let isUser: Bool
+    
+    var body: some View {
+        HStack {
+            if isUser {
+                Spacer()
+                Text(content)
+                    .padding()
+                    .background(Color(hex: "FFD8C4"))
+                    .cornerRadius(10)
+                
+            } else {
+                Text(content)
+                    .padding()
+                    .background(Color(hex: "F5F5F5"))
+                    .cornerRadius(10)
+                
+                Spacer()
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }

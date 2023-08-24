@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF75A5902A9799A80005BD54 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75A58F2A9799A80005BD54 /* ChatModel.swift */; };
 		AF976E4A2A96026F00E03590 /* ChatAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E492A96026F00E03590 /* ChatAppSwiftUIApp.swift */; };
 		AF976E4C2A96026F00E03590 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF976E4B2A96026F00E03590 /* ContentView.swift */; };
 		AF976E4E2A96027000E03590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF976E4D2A96027000E03590 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF75A58F2A9799A80005BD54 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		AF976E462A96026F00E03590 /* ChatAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF976E492A96026F00E03590 /* ChatAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		AF976E4B2A96026F00E03590 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				AF976E5D2A960C9500E03590 /* Message.swift */,
+				AF75A58F2A9799A80005BD54 /* ChatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				AF976E592A96087400E03590 /* TitleRow.swift in Sources */,
 				AF976E652A96136800E03590 /* MessageField.swift in Sources */,
 				AF976E5B2A960B8400E03590 /* Extension+Color.swift in Sources */,
+				AF75A5902A9799A80005BD54 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

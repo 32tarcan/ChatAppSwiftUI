@@ -46,6 +46,6 @@ struct TitleRow: View {
 struct TitleRow_Previews: PreviewProvider {
     static var previews: some View {
         TitleRow()
-            .background(Color(hex: "FFD8C4"))
+            .background(Color(hex: "FFE5B4"))
     }
 }

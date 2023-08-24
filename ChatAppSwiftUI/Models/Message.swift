@@ -6,10 +6,8 @@
 //
 
 import Foundation
-
-struct Message: Identifiable, Codable {
-    var id: String
-    var text: String
-    var received: Bool
-    var timestamp: Date
+struct Message: Identifiable {
+    let id = UUID()
+    let content: String
+    let isUser: Bool
 }
