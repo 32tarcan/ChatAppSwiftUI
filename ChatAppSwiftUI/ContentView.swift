@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var chatModel = ChatModel()
     @State private var newMessage = ""
+    @State private var scrollToBottom = true
     
     var body: some View {
         
@@ -20,20 +21,28 @@ struct ContentView: View {
                 .background(Color(hex: "FFE5B4"))
             
             ScrollViewReader { scrollViewProxy in
-                ScrollView {
-                    ForEach(chatModel.messages) { message in
-                        MessageView(content: message.content, isUser: message.isUser)
-                            .id(message.id)
-                    }
-                    .onChange(of: chatModel.messages) { _ in
-                        
-                        withAnimation {
-                            scrollViewProxy.scrollTo(chatModel.messages.last?.id, anchor: .bottom)
-                        }
-                    }
-                }
-                
-            }
+                           ScrollView {
+                               ForEach(chatModel.messages) { message in
+                                   MessageView(content: message.content, isUser: message.isUser)
+                                       .id(message.id)
+                               }
+                               .onChange(of: chatModel.messages) { _ in
+                                   if scrollToBottom {
+                                       withAnimation {
+                                           scrollViewProxy.scrollTo(chatModel.messages.last?.id, anchor: .bottom)
+                                       }
+                                   }
+                               }
+                               .onAppear {
+                                   if let lastMessageID = chatModel.messages.last?.id {
+                                       withAnimation {
+                                           scrollViewProxy.scrollTo(lastMessageID, anchor: .bottom)
+                                       }
+                                       scrollToBottom = false
+                                   }
+                               }
+                           }
+                       }
             .padding(.top, 20)
             .background(.white)
             .cornerRadius(30, corners: [.topLeft, .topRight])
@@ -46,6 +55,7 @@ struct ContentView: View {
                 Button {
                     chatModel.addMessage(newMessage)
                     newMessage = ""
+                    scrollToBottom = true
                 } label: {
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.white)
