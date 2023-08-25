@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Message: Identifiable, Codable {
+struct Message: Identifiable, Codable, Hashable {
     let id = UUID()
     let content: String
     let isUser: Bool

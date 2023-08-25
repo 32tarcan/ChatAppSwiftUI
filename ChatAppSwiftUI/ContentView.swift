@@ -19,13 +19,21 @@ struct ContentView: View {
             TitleRow()
                 .background(Color(hex: "FFE5B4"))
             
-            ScrollView {
-                ForEach(chatModel.messages) { message in
-                    MessageView(content: message.content, isUser: message.isUser)
+            ScrollViewReader { scrollViewProxy in
+                ScrollView {
+                    ForEach(chatModel.messages) { message in
+                        MessageView(content: message.content, isUser: message.isUser)
+                            .id(message.id)
+                    }
+                    .onChange(of: chatModel.messages) { _ in
+                        
+                        withAnimation {
+                            scrollViewProxy.scrollTo(chatModel.messages.last?.id, anchor: .bottom)
+                        }
+                    }
                 }
                 
             }
-            
             .padding(.top, 20)
             .background(.white)
             .cornerRadius(30, corners: [.topLeft, .topRight])
@@ -38,9 +46,6 @@ struct ContentView: View {
                 Button {
                     chatModel.addMessage(newMessage)
                     newMessage = ""
-                    
-                        
-                        
                 } label: {
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.white)
@@ -48,7 +53,6 @@ struct ContentView: View {
                         .background(Color(hex: "FFD8C4"))
                         .cornerRadius(50)
                 }
-                
                 
             }
             .padding(.horizontal)
@@ -60,6 +64,7 @@ struct ContentView: View {
         
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
